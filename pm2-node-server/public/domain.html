@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="https://lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  // 测试GET请求
+  $.ajax({
+      type: "GET",
+      url: "http://localhost:9000/api/user/list",
+      data: "",
+      success: function(msg){
+          console.log(msg)
+      }
+  });
+  // 测试POST请求
+  $.ajax({
+      type: "POST",
+      url: "http://localhost:9000/api/user/add",
+      data: "",
+      success: function(msg){
+          console.log(msg)
+      }
+  });
+  </script>
+
+
+
+
+</body>
+</html>

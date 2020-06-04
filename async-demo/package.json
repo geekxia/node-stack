@@ -1,0 +1,17 @@
+{
+  "name": "async-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-series.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "async1": "node 1-series.js",
+    "async2": "node 2-parallel.js",
+    "start": "node 3-waterfall.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.1.0"
+  }
+}
