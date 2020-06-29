@@ -546,7 +546,7 @@ npm outdated
 ```
 	1. ^  保留主版本号不变，后面最新
 	2. ~  保留主版本和次版本号不变，后面取最新
-	3. `*`安装最新版本
+	3. *  安装最新版本
 
 
 **4、模块卸载**
@@ -561,7 +561,7 @@ npm uninstall gulp -D
 npm install nrm -g
 nrm list  查看源
 nrm use taobao  切换源
-npm test  测试源的速度
+nrm test  测试源的速度
 ```
 
 **6、如果安装某个模块报错，重新安装又没有覆盖怎么办？**
