@@ -367,9 +367,11 @@ npm cache clear
 ## Node.js内置模块
 
 #### 1、URL模块
-
+```
 url.parse('http://www.baidu.com:8080/api?user=geekxia&pwd=123#100')
 url.parse('http://www.baidu.com:8080/api?user=geekxia&pwd=123#100', true)
+
+// 把URL解析成对象
 url.parse('://www.baidu.com:8080/api?user=geekxia&pwd=123#100', true, true)
 	{
 		protocol: 'http:',
@@ -385,8 +387,8 @@ url.parse('://www.baidu.com:8080/api?user=geekxia&pwd=123#100', true, true)
 		path: '/api?user=geekxia&pwd=123',
 		href: 'http://www.baidu.com:8080/api?user=geekxia&pwd=123#100'
 	}
-	URL的组成
 
+// 把对象格式化成URL
 url.format({
 	protocol: 'http:',
 	slashes: true,
@@ -399,40 +401,41 @@ url.format({
 	query: 'user=geekxia&pwd=123',
 	pathname: '/api',
 	path: '/api?user=geekxia&pwd=123',
-})	把对象解析成URL
+})
 
+// 把两段URL片段，组合成一个完整的URL
 url.resolve('http://www.baidu.com', '/api/getList')
-	把两段URL片段，组合成一个完整的URL
+```
 
 #### 2、QueryString模块
 * 对查询字符串执行更加强大的解析
-
+```
 querystring.string()
 
-	querystring.stringify({
-		name: 'qf',
-		course: ['nodejs', 'vue', 'react']
-	})  默认使用 & 进行分隔，键值用 = 连接
+// 默认使用 & 进行分隔，键值用 = 连接
+querystring.stringify({
+	name: 'qf',
+	course: ['nodejs', 'vue', 'react']
+})
 
-	querystring.stringify({
-		name: 'qf',
-		course: ['nodejs', 'vue', 'react']
-	}, ',')  自定义分隔符
+// 自定义分隔符
+querystring.stringify({
+	name: 'qf',
+	course: ['nodejs', 'vue', 'react']
+}, ',')
 
-	querystring.stringify({
-		name: 'qf',
-		course: ['nodejs', 'vue', 'react']
-	}, ',', ':')  自定义键值对之间的分隔符
+// 自定义键值对之间的分隔符
+querystring.stringify({
+	name: 'qf',
+	course: ['nodejs', 'vue', 'react']
+}, ',', ':')  
 
-querystring.parse()
-
-	querystring.string() 的逆方法，也可以接受后面的两参数
+querystring.parse() // querystring.string()的逆方法，也可以接受后面的两参数
 
 querystring.escape('北京')
 
-querystring.unescape()
-	与 querystring.escape 互逆
-
+querystring.unescape() // 与querystring.escape互逆
+```
 
 #### 3、HTTP/HTTPS 模块 - get()
 
@@ -512,8 +515,8 @@ var myEvent = new EventEmitter()
 
 原理，就是根据 req.url 来区分客户的请求路径，根据不同的访问路径响应不同内容。
 
-nodejs代码实时编辑工具：
-	nodemon
+nodejs代码实时编辑工具（进程守护）：
+	nodemon / supervisor
 
 res.writeHead(200, {'Content-Type':'text/plain;charset=utf-8;'})
 	参见：HTTP媒体类型/MIME_Types
