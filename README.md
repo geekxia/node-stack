@@ -1,4 +1,4 @@
-## 一、开班
+## 开班
 
 #### 1、自我介绍
 
@@ -53,7 +53,7 @@
 --------------------------------------------------
 
 
-## 二、MarkDown语法介绍
+## MarkDown语法介绍
 
 #### 0、介绍
 
@@ -143,9 +143,12 @@ console.log(1)
 
 
 
-## 三、Node.js基础
+## Node.js基础
 
 #### 1、Node.js介绍
+
+编译型
+解释型
 
 **为什么要学习node.js？**
 
@@ -188,6 +191,8 @@ npm install nodemon -g  // 全局安装nodemon
 #### 2、Node.js安装
 
 **版本识别：**
+
+12.3.2
 
 * LTS  稳定版本，建议安装
 * Current  最新版本
@@ -261,7 +266,105 @@ node test.js [arg1 arg2 arg3]
 
 --------------------------------------------------
 
-## 四、Node.js内置模块
+## NPM 入门使用
+
+**1、认识**
+* npm 是基于CommonJS规范的包管理工具
+* Node.js安装完成后，npm同步安装
+```
+node -v
+npm -v
+```
+
+**仓库源切换，建议使用淘宝镜像**
+
+```
+npm install nrm -g
+nrm ls
+nrm use taobao
+nrm ls
+```
+
+
+**2、管理模块：package.json**
+
+* package.json初始化
+```
+npm init
+```
+
+* 作用：
+	* 便于模块管理
+	* 便于代码转移
+	* package.json 文件属性讲解
+		* 项目依赖
+		* 开发时依赖
+
+**3、模块安装**
+* 全局安装：
+```
+npm install name -g/--global
+npm i name -g
+```
+* 本地安装：
+```
+npm install react -S/--save
+npm install gulp -D/--save-dev
+```
+
+* 安装指定版本：
+```
+npm info react
+npm install react@16.9.0 -S
+npm list
+rm -rf node_modules
+npm install
+```
+
+* 三个标识：
+```
+npm outdated
+```
+	1. ^  保留主版本号不变，后面最新
+	2. ~  保留主版本和次版本号不变，后面取最新
+	3. *  安装最新版本
+
+
+**4、模块卸载**
+```
+npm uninstall name -g
+npm uninstall react -S
+npm uninstall gulp -D
+```
+
+**5、nrm 源管理**
+```
+npm install nrm -g
+nrm list  查看源
+nrm use taobao  切换源
+nrm test  测试源的速度
+```
+
+**6、如果安装某个模块报错，重新安装又没有覆盖怎么办？**
+
+* 先卸载，再清除缓存，最后重新安装
+```
+npm uninstall nodemon -g
+npm cache clear
+```
+* 或者，删除node_modules后，再npm install
+* [NPM官网](https://www.npmjs.com/)
+
+**7、yarn 另一个包管理器推荐**
+
+* [yarn中文网](https://yarn.bootcss.com/)
+* 安装yarn：`npm install yarn -g`
+* yarn和npm二选一，即可
+
+--------------------------------------------------
+
+
+## Node.js内置模块
 
 #### 1、URL模块
 
@@ -394,7 +497,7 @@ var myEvent = new EventEmitter()
 --------------------------------------------------
 
 
-## 五、Node.js原生Api 搭建服务器
+## Node.js原生Api 搭建服务器
 
 
 #### 1、什么是服务器？
@@ -460,7 +563,7 @@ server.listen(8000, function() {
 --------------------------------------------------
 
 
-## 七、用Express 重构WebServer
+## 用Express 重构WebServer
 
 Express安装：`npm install express -S`
 
@@ -485,98 +588,7 @@ app.listen(8000, ()=>{
 --------------------------------------------------
 
 
-## 八、NPM 入门使用
-
-**1、认识**
-* npm 是基于CommonJS规范的包管理工具
-* Node.js安装完成后，npm同步安装
-```
-node -v
-npm -v
-```
-
-**仓库源切换，建议使用淘宝镜像**
-
-```
-npm install nrm -g
-nrm ls
-nrm use taobao
-nrm ls
-```
-
-
-**2、管理模块：package.json**
-
-* package.json初始化
-```
-npm init
-```
-
-* 作用：
-	* 便于模块管理
-	* 便于代码转移
-	* package.json 文件属性讲解
-		* 项目依赖
-		* 开发时依赖
-
-**3、模块安装**
-* 全局安装：
-```
-npm install name -g/--global
-npm i name -g
-```
-* 本地安装：
-```
-npm install react -S/--save
-npm install gulp -D/--save-dev
-```
-
-* 安装指定版本：
-```
-npm info react
-npm install react@16.9.0 -S
-npm list
-rm -rf node_modules
-npm install
-```
-
-* 三个标识：
-```
-npm outdated
-```
-	1. ^  保留主版本号不变，后面最新
-	2. ~  保留主版本和次版本号不变，后面取最新
-	3. *  安装最新版本
-
-
-**4、模块卸载**
-```
-npm uninstall name -g
-npm uninstall react -S
-npm uninstall gulp -D
-```
-
-**5、nrm 源管理**
-```
-npm install nrm -g
-nrm list  查看源
-nrm use taobao  切换源
-nrm test  测试源的速度
-```
-
-**6、如果安装某个模块报错，重新安装又没有覆盖怎么办？**
-
-* 先卸载，再清除缓存，最后重新安装
-```
-npm uninstall nodemon -g
-npm cache clear
-```
-* 或者，删除node_modules后，再npm install
-* [NPM官网](https://www.npmjs.com/)
-
---------------------------------------------------
-
-## 九、MongoDB/Robo3T安装
+## MongoDB/Robo3T安装
 
 #### 1、MongoDB安装
 
@@ -608,7 +620,7 @@ npm cache clear
 
 --------------------------------------------------
 
-## 十、CommonJS 模块规范
+## CommonJS 模块规范
 
 **1、问题：如果不使用模块化开发，会怎么样？**
 * 同一个文件中的函数定义与调用（demo演示）
@@ -685,7 +697,7 @@ var Test = require('./test')   // .js后缀可以省略
 --------------------------------------------------
 
 
-## 十一、MongoDB 数据库
+## MongoDB 数据库
 
 #### 1、MongoDB vs. MySQL 及其概念讲解
 
@@ -864,7 +876,7 @@ module.exports = userModel
 --------------------------------------------------
 
 
-## 十二、使用 express-generator 搭建工程项目
+## 使用 express-generator 搭建工程项目
 
 #### 1、express 简介
 
@@ -932,7 +944,7 @@ npm start   // nodemon ./bin/www
 
 --------------------------------------------------
 
-## 十三、RSETful规范及相关概念
+## RSETful规范及相关概念
 
 #### 1、RESTful规范
 
@@ -980,7 +992,7 @@ curl -d'login=emma＆password=123'-X POST https://google.com/login
 
 --------------------------------------------------
 
-## 十四、综合项目实战
+## 综合项目实战
 
 * [Node.js实战项目原型](https://uxu2kj.axshare.com)
 * 原型需求和UI需求简述
@@ -1207,7 +1219,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 ```
 
 
-## 十五、WebSocket
+## WebSocket
 
 #### 1、WebSocket是什么？
 
@@ -1241,7 +1253,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 
 
-## 十六、跨域问题
+## 跨域问题
 
 #### 1、什么跨域？
 
@@ -1306,7 +1318,7 @@ app.all('*', function(req, res, next) {
 ```
 
 
-## 十七、Token 规范
+## Token 规范
 
 * [JSON Web Token 入门教程](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
 * [JSON Web Tokens](https://jwt.io/)
@@ -1333,7 +1345,7 @@ $.ajax({
 ```
 
 
-## 十一、Git基础操作
+## Git基础操作
 
 * 如何解决Git Bash 面板中的中文乱码问题？右键->options->text->把编码格式改为UTF-8。
 
@@ -1386,11 +1398,7 @@ git push origin master
 ```
 
 
-
-
-
-
-## 十六、PM2
+## PM2
 
 * 安装：`npm install pm2 -g`
 
