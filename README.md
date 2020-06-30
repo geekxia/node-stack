@@ -529,8 +529,6 @@ var http = require('http')
 var fs = require('fs')
 var path = require('path')
 
-var express = require('express')
-
 var server = http.createServer(function(req, res) {
 	var url = req.url
 	// favicon.ico
@@ -714,6 +712,8 @@ var Test = require('./test')   // .js后缀可以省略
 		field  域
 		index  索引
 		primary_key  自动地使用_id字段作为主键
+		
+
 
 	文档：即键值对(BSON，二进制的JSON)，文档中不需要设置对等的字段，并且相同字段的值可以是不同的数据类型，这是与关系型数据库有很大的区别。
 	示例：{"_id": ObjectId{"s232323232"}, name: geekxia, age: 20}
@@ -1479,3 +1479,7 @@ mocha安装与环境搭建：
 		测试函数异常抛出：
 			expect(fn).to.throw()
 			当目标函数抛出异常时，测试通过；反之不通过。
+
+
+--------------------------------------------------
+END
