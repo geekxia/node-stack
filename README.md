@@ -818,7 +818,7 @@ var Test = require('./test')   // .js后缀可以省略
 		db.user.findOne()  查询满足条件的第一条记录
 		db.user.find({age:{$gte:25}}).count()  查询满足条件的记录的总条数
 		db.user.find({grade:{$exists:true}})  查询含有grade字段的记录
-		db.user.find({grade:{$exists:true}}).count()  查询存在sex字段的记录的总条数
+		db.user.find({sex:{$exists:true}}).count()  查询存在sex字段的记录的总条数
 
 	7、实战mongo shell
 		构造一批假数据，使用insertMany()入库
