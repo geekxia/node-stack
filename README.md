@@ -1297,9 +1297,9 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 	* 前端可以使用Webpack进行接口代理（Vue阶段会讲）
 ```js
 const app = require('express')()
-const proxy = require('http-proxy-middleware')
+const {createProxyMiddleware} = require('http-proxy-middleware')
 
-app.use('/user', proxy({
+app.use('/api', createProxyMiddleware({
 	target: 'http://10.36.136.170:9999',
 	changeOrigin: true
 }))
